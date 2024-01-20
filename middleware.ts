@@ -6,7 +6,7 @@ import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
   // allow all under the webhook folder
-  publicRoutes: ["/api/webhooks(.*)"],
+  publicRoutes: ["/api/webhooks(.*)", "/"],
 });
 
 export const config = {
