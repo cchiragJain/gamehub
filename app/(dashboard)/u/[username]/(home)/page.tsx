@@ -9,7 +9,7 @@ interface CreatorPageProps {
   };
 }
 
-export const CreatorPage = async ({ params }: CreatorPageProps) => {
+const CreatorPage = async ({ params }: CreatorPageProps) => {
   const externalUser = await currentUser();
   const user = await getUserByUsername(params.username);
 
@@ -23,3 +23,5 @@ export const CreatorPage = async ({ params }: CreatorPageProps) => {
     </div>
   );
 };
+
+export default CreatorPage;
