@@ -35,6 +35,8 @@ export const isBlockedByUser = async (id: string) => {
 export const blockUser = async (id: string) => {
   const self = await getSelf();
 
+  console.log("inside block service");
+
   if (self.id === id) {
     throw new Error("Cannot block yourself");
   }

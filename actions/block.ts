@@ -11,6 +11,7 @@ export const onBlock = async (id: string) => {
 
   revalidatePath("/");
 
+  console.log(blockedUser);
   if (blockedUser) {
     revalidatePath(`/${blockedUser.blocked.username}`);
   }
