@@ -18,6 +18,11 @@ export const getUserById = async (id: string) => {
     where: { id },
     include: {
       stream: true,
+      _count: {
+        select: {
+          followedBy: true,
+        },
+      },
     },
   });
   return user;
