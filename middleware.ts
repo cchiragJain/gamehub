@@ -5,8 +5,8 @@ import { authMiddleware } from "@clerk/nextjs";
 // See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your Middleware
 
 export default authMiddleware({
-  // allow all under the webhook folder
-  publicRoutes: ["/api/webhooks(.*)", "/", "/api/uploadthing"],
+  // all allowed routes that don't require user to be logged in
+  publicRoutes: ["/api/webhooks(.*)", "/", "/api/uploadthing", "/:username"],
 });
 
 export const config = {
