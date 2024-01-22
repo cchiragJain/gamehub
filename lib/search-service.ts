@@ -1,5 +1,5 @@
-import { db } from "@/lib/db";
 import { getSelf } from "@/lib/auth-service";
+import { db } from "@/lib/db";
 
 export const getSearch = async (term?: string) => {
   let userId;
@@ -40,8 +40,13 @@ export const getSearch = async (term?: string) => {
           },
         ],
       },
-      include: {
+      select: {
         user: true,
+        id: true,
+        name: true,
+        isLive: true,
+        thumbnailUrl: true,
+        updatedAt: true,
       },
       orderBy: [
         {

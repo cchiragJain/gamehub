@@ -6,7 +6,13 @@ import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
   // all allowed routes that don't require user to be logged in
-  publicRoutes: ["/api/webhooks(.*)", "/", "/api/uploadthing", "/:username"],
+  publicRoutes: [
+    "/api/webhooks(.*)",
+    "/",
+    "/api/uploadthing",
+    "/:username",
+    "/search",
+  ],
 });
 
 export const config = {
