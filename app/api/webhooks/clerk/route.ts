@@ -2,6 +2,7 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { Webhook } from "svix";
 
+import { resetIngresses } from "@/actions/ingress";
 import { db } from "@/lib/db";
 
 export async function POST(req: Request) {
@@ -97,6 +98,9 @@ export async function POST(req: Request) {
         externalUserId: payload.data.id,
       },
     });
+
+    // Reset any active stream if the user gets deleted
+    await resetIngresses(payload.data.id);
   }
 
   return new Response("", { status: 200 });
