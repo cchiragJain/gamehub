@@ -62,6 +62,7 @@ export const StreamPlayer = ({
             isFollowing={isFollowing}
             name={stream.name}
           />
+
           <InfoCard
             hostIdentity={user.id}
             viewerIdentity={identity}
