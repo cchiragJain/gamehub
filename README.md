@@ -10,7 +10,7 @@
 ## Intro
 A streaming platform featuring RTMP/WHIP protocols, authentication, real-time chat, live viewer count, and a robust dashboard for creators. The system includes unique color-coded chat, following, blocking, and real-time participant management. [Live Link](https://gamehub-peach.vercel.app/)
 
-### Tech Used
+### Tech Stack Used
 - Next.js and Typescript
 - MySQL
 - Tailwind CSS
@@ -23,8 +23,9 @@ A streaming platform featuring RTMP/WHIP protocols, authentication, real-time ch
 
 ### ERD Diagram
 ![ERD Diagram](./README.assets/ERD_Diagram.png)
+
 ## Demo
-![User Demo]([https://drive.google.com/file/d/1uvOnNDJLxiKmMl4jgO_1ppo4mPt6WM8G/view](https://github.com/cchiragJain/gamehub/assets/59828850/e5a2d3c0-adf0-40ac-9e8d-274ab7d75169))
+https://github.com/cchiragJain/gamehub/assets/59828850/e5a2d3c0-adf0-40ac-9e8d-274ab7d75169
 
 ## Local Setup Steps
 - Clone the repo.
