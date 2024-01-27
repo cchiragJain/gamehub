@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gamehub
+- [Gamehub](#gamehub)
+  - [Intro](#intro)
+    - [Tech Used](#tech-used)
+    - [ERD Diagram](#erd-diagram)
+  - [Demo](#demo)
+  - [Local Setup Steps](#local-setup-steps)
+  - [Known Issues](#known-issues)
 
-## Getting Started
+## Intro
+A streaming platform featuring RTMP/WHIP protocols, authentication, real-time chat, live viewer count, and a robust dashboard for creators. The system includes unique color-coded chat, following, blocking, and real-time participant management. [Live Link](https://gamehub-peach.vercel.app/)
 
-First, run the development server:
+### Tech Used
+- Next.js and Typescript
+- MySQL
+- Tailwind CSS
+- Shadcn ui components
+- Clerk for Auth
+- Livekit for streaming and particpant management
+- Prisma ORM
+- Zustand for local state management
+- Upload thing for S3 File Uploads 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### ERD Diagram
+![ERD Diagram](./README.assets/ERD_Diagram.png)
+## Demo
+![User Demo](./README.assets/user_demo.mp4)
+## Local Setup Steps
+- Clone the repo.
+- Inside a terminal run `npm install`.(Created on node version 20.11) After the step is completed in a terminal run the command npm run dev. This will open a development server for you.
+- You would also need to create a local `.env` file with the following keys. ( fill your own private keys for some of them ).
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY= 
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+CLERK_WEBHOOK_SECRET=
+DATABASE_URL=
+LIVEKIT_API_URL=
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_WS_URL=
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Known Issues
+- There are some issues where `revalidatePath` is not working like changing chat settings needs a reload to take into effect for other users unlike participant management events from livekit.
+- App is on free tier of livekit so there may be error in generating new ingresses/ keys on the creator dashboard. Contact me and I will give you the already created keys or create a new project.
+- Some times the live banner is not coming on the dashboard page even when the user is live.
