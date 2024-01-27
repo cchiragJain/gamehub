@@ -24,7 +24,8 @@ A streaming platform featuring RTMP/WHIP protocols, authentication, real-time ch
 ### ERD Diagram
 ![ERD Diagram](./README.assets/ERD_Diagram.png)
 ## Demo
-![User Demo](./README.assets/user_demo.mp4)
+![User Demo]([https://drive.google.com/file/d/1uvOnNDJLxiKmMl4jgO_1ppo4mPt6WM8G/view](https://github.com/cchiragJain/gamehub/assets/59828850/e5a2d3c0-adf0-40ac-9e8d-274ab7d75169))
+
 ## Local Setup Steps
 - Clone the repo.
 - Inside a terminal run `npm install`.(Created on node version 20.11) After the step is completed in a terminal run the command npm run dev. This will open a development server for you.
